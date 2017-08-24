@@ -26,7 +26,7 @@ class WorkoutSearch extends Component {
 
   componentWillMount() {
     console.log(localStorage.getItem('token'))
-    axios.post(`http://localhost:8080/workouts/public`, {
+    axios.post(`/workouts/public`, {
       token: localStorage.getItem('token')
     })
       .then(res => {
@@ -44,7 +44,7 @@ class WorkoutSearch extends Component {
         console.log(err + ' error on exercise call')
       })
 
-    axios.post(`http://localhost:8080/workouts/personal`, {
+    axios.post(`/workouts/personal`, {
       token: localStorage.getItem('token')
     })
       .then(res => {
@@ -67,7 +67,7 @@ class WorkoutSearch extends Component {
   }
 
   handleSubmit() {
-    axios.get(`http://localhost:8080/workouts`
+    axios.get(`/workouts`
     //    {
     //   params: this.state.searchParams
     // }

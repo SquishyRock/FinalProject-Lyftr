@@ -12,6 +12,13 @@ const User = require('./models/users');
 const Workout = require('./models/workouts');
 const Result = require('./models/results');
 
+//PRE AWS
+const path = require('path'),
+  PORT = process.env.PORT || 8080
+app.use(express.static(path.resolve(__dirname + './../front-end/build')))
+
+
+
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -48,11 +55,17 @@ app.use('/workouts', workoutRoutes);
 app.use('/results', resultRoutes);
 
 // ---SEEDS----//
-const seedExercises = require('./seeds/exercises');
-seedExercises();
-const seedWorkouts = require('./seeds/workouts');
-seedWorkouts();
+// const seedExercises = require('./seeds/exercises');
+// seedExercises();
+// const seedWorkouts = require('./seeds/workouts');
+// seedWorkouts();
 
-app.listen(8080, () => {
-  console.log('SERVER RUNNING ON 8080');
+//AWS
+//wildcard ==> needed to make sure we always send back index.html regardless of file path
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname + './../front-end/build/index.html'))
+})
+
+app.listen(PORT, () => {
+  console.log('SERVER RUNNING ON' + PORT);
 })

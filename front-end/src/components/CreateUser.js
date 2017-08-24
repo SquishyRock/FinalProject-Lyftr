@@ -52,7 +52,7 @@ class CreateUser extends Component {
     e.preventDefault();
     if (this.state.password !== '') {
       axios
-        .post('http://localhost:8080/users', this.state)
+        .post('/users', this.state)
         .then((res) => {
           browserHistory.push('/')
         })

@@ -23,7 +23,7 @@ class IndExDisplay extends Component {
   //Before component renders, makes a call to database for the individual exericse ID
   //Returns information to state to be used for render
   componentWillMount() {
-    axios.get(`http://localhost:8080/exercises/${this.props.params.id}`)
+    axios.get(`/exercises/${this.props.params.id}`)
       .then(res => {
         console.log(res.data)
         let data = res.data
