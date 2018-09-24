@@ -1,37 +1,18 @@
-## Welcome to GitHub Pages
+# Lyftr
 
-You can use the [editor on GitHub](https://github.com/SquishyRock/FinalProject-Lyftr/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Description
+Web browser application, optimized for mobile viewing, that was built as the final project to a 3 month coding bootcamp. The application was completed start to finish in the two final weeks of the program.
+Users can sign into the application after creating a personalized username and password, which once signed in is stored as a JWT to allow for users to use the site without having to sign in again until clearing their cookies. Once signed in, users can search through workout programs created by other users that they have shared or can create their own. By selecting 'Make a Workout' users can search through our database of exercises and add them to a workout with their desired sets and reps. Once finished adding exercies users can give the workout a name and choose whether to make that workout public so other users can select it aswell. Once saved all public workouts, plus the signed in users private workouts, will be visable on the find a workout tab. From this page users can view workouts and delete workouts that they have created themselves. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Packages Used
+- React / React Router
+- JWT (JSON Web Tokens)
+- Node.js
+- Express
+- MongoDB
+- Axios
+- Material UI
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/SquishyRock/FinalProject-Lyftr/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Other Notes
+- Project front-end and back-endwas hosted on AWS EC2 instance during the final project presentation allowing users to create their own accounts. 
+- Exercise search function custom built to allow mutlitple filters when querrying database of exercises.
