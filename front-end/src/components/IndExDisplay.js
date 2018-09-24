@@ -23,7 +23,7 @@ class IndExDisplay extends Component {
   //Before component renders, makes a call to database for the individual exericse ID
   //Returns information to state to be used for render
   componentWillMount() {
-    axios.get(`/exercises/${this.props.params.id}`)
+    axios.get(`http://localhost:8080/exercises/${this.props.params.id}`)
       .then(res => {
         console.log(res.data)
         let data = res.data
@@ -104,7 +104,7 @@ class IndExDisplay extends Component {
       <br/>
       <h2> {this.convertToEquipment(this.state.exercise.equipment)} </h2>
       <div className='eqImage'> <img src={this.convertToPicture(this.state.exercise.equipment)} alt={this.convertToEquipment(this.state.exercise.equipment)} /></div>
-      <RaisedButton label='More Informaton' href={this.state.exercise.external_link}/>
+      <a href={this.state.exercise.external_link} target='_blank'><RaisedButton label='More Informaton' /> </a>
       <ConvertedArr array={this.convertToMuscle(this.state.exercise.muscle_group)} convertToMuscle={this.convertToMuscle}/>
     </div>
     )

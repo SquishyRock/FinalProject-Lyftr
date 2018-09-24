@@ -25,7 +25,7 @@ class WorkoutDisplay extends Component {
     this.deleteWorkout = this.deleteWorkout.bind(this)
   }
   componentWillMount() {
-    axios.post(`/workouts/${this.props.params.id}`, {
+    axios.post(`http://localhost:8080/workouts/${this.props.params.id}`, {
       token: localStorage.getItem('token')
     })
       .then(res => {
@@ -46,7 +46,7 @@ class WorkoutDisplay extends Component {
   }
 
   deleteWorkout() {
-    axios.post(`/workouts/del/${this.props.params.id}`, {
+    axios.post(`http://localhost:8080/workouts/del/${this.props.params.id}`, {
       id: this.state.workout.author,
       token: localStorage.getItem('token')
     })

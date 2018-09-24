@@ -49,7 +49,7 @@ class Login extends Component {
   formSubmit(e) {
     e.preventDefault();
     axios
-      .post('/users/login', this.state)
+      .post('http://localhost:8080/users/login', this.state)
       .then((res) => {
         localStorage.setItem('token', res.data.token)
         browserHistory.push('/workouts')

@@ -78,7 +78,7 @@ class ExerciseSearch extends Component {
         saveFail: true
       })
     }
-    axios.post('/workouts/new', {
+    axios.post('http://localhost:8080/workouts/new', {
       name: this.state.workoutName,
       public: this.state.public,
       exercises: this.state.addedExercises,
@@ -126,7 +126,7 @@ class ExerciseSearch extends Component {
       toRender: 1,
       returnedExercises: []
     })
-    axios.post(`/exercises/search`, {
+    axios.post(`http://localhost:8080/exercises/search`, {
       params: this.state.searchParams,
       token: localStorage.getItem('token')
     })
