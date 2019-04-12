@@ -17,3 +17,9 @@ Users can sign into the application after creating a personalized username and p
 ## Other Notes
 - Project front-end and back-endwas hosted on AWS EC2 instance during the final project presentation allowing users to create their own accounts. 
 - Exercise search function custom built to allow mutlitple filters when querrying database of exercises.
+
+## Steps to Run
+1. NPM Install front and back end
+2. Seed database - may be automatic on first backend start
+3. Ensure node server is running locally with NPM start from backend
+4. Run NPM start from the front end to start the site and navigate from your browser
